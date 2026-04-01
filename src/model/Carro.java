@@ -3,25 +3,25 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Carro{
-    private String Modelo;
+    private String modelo;
     private String ano;
     private String placa;
     private double valor;
     private Cliente cliente;
 
     public Carro(String modelo, String ano, String placa, double  valor) {
-        this.Modelo = modelo;
+        this.modelo = modelo;
         this.ano = ano;
         this.placa = placa;
         this.valor = valor;
     }
 
     public String getModelo() {
-        return Modelo;
+        return modelo;
     }
 
-    public void setModelo(String Modelo) {
-        this.Modelo = Modelo;
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
 
     public String getAno() {
@@ -58,11 +58,11 @@ public class Carro{
     }
 
     public boolean isModelo(String modelo){
-        return this.Modelo != null && modelo != null && this.Modelo.equalsIgnoreCase(modelo.trim());
+        return this.modelo != null && modelo != null && this.modelo.equalsIgnoreCase(modelo.trim());
     }
 
     public void dadosCarro(){
-        System.out.printf("Carro encontrado: %s | %s | %s | R$ %.2f%n", Modelo, ano, placa, valor);
+        System.out.printf("Carro encontrado: %s | %s | %s | R$ %.2f%n", modelo, ano, placa, valor);
     }
 
     public boolean confirmador(char opc){
@@ -77,7 +77,7 @@ public class Carro{
             return;
         }
         for (Carro carro : listaCarros){
-            System.out.printf("Modelo: %s | Ano: %s | Placa: %s | Valor: R$ %.2f%n",
+            System.out.printf("modelo: %s | Ano: %s | Placa: %s | Valor: R$ %.2f%n",
                     carro.getModelo(), carro.getAno(), carro.getPlaca(), carro.getValor());
         }
     }
@@ -89,7 +89,7 @@ public class Carro{
             System.out.println("Digite os Dados do Carro:");
 
 
-            String modelo = lerCampo(scanner, "Modelo:");
+            String modelo = lerCampo(scanner, "modelo:");
 
 
             String ano = lerCampo(scanner, "Ano: ");
@@ -119,7 +119,7 @@ public class Carro{
 
             estoque.add(new Carro(modelo, ano, placa, valor));
 
-            System.out.print("Deseja inserir outro Cliente? <S/N>: ");
+            System.out.print("Deseja inserir outro Carro? <S/N>: ");
             String resposta = scanner.nextLine().trim();
             opcao = resposta.isEmpty() ? 'N' : resposta.charAt(0);
         }
